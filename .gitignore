@@ -2,3 +2,9 @@ __pycache__/
 *.pyc
 users.json
 .env
+__pycache__/
+users.json
+pipeline_status.txt
+random_forest.pkl
+combined_threats.csv
+singapore.csv

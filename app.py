@@ -89,7 +89,7 @@ def install_missing_packages():
             *missing,
         ])
 
-    print("✅ Installation check complete.")
+    print("Installation check complete.")
 
 
 install_missing_packages()
@@ -143,7 +143,7 @@ if not os.getenv("ABUSEIPDB_KEY") and sys.stdin is not None and sys.stdin.isatty
     except (EOFError, KeyboardInterrupt):
         pass
 
-print("✅ API key configuration loaded.")
+print("API key configuration loaded.")
 print("VirusTotal key:", "loaded" if os.getenv("VIRUSTOTAL_KEY") else "not configured")
 print("AbuseIPDB key:", "loaded" if os.getenv("ABUSEIPDB_KEY") else "not configured")
 
@@ -189,7 +189,7 @@ np.random.seed(SEED)
 random.seed(SEED)
 tf.random.set_seed(SEED)
 
-print("✅ Libraries loaded.")
+print("Libraries loaded.")
 print("TensorFlow:", tf.__version__)
 
 # Website uses these same scores as the original final dashboard.
@@ -250,15 +250,15 @@ def prepare_pipeline():
         )
 
     if pipeline_outputs_exist():
-        print("✅ Existing combined dataset and model files found.")
-        print("✅ Skipping retraining.")
+        print("Existing combined dataset and model files found.")
+        print("Skipping retraining.")
         PREPARATION_LOG.write_text(
             "Existing pipeline outputs found. Training was skipped.\n",
             encoding="utf-8",
         )
         return
 
-    print("⚠️ Pipeline artifacts are incomplete. Running the full Colab pipeline once...")
+    print("WARNING: Pipeline artifacts are incomplete. Running the full Colab pipeline once...")
 
     # ============================================================
     # CELL 6 — THREAT DEFINITIONS
@@ -313,7 +313,7 @@ def prepare_pipeline():
         "Critical": 1.00
     }
 
-    print("✅ Threat definitions loaded.")
+    print("Threat definitions loaded.")
     # ================= CELL 7 =================
     # ============================================================
     # CELL 7 — PAYLOAD CLASSIFICATION
@@ -437,7 +437,7 @@ def prepare_pipeline():
         )
 
 
-    print("✅ Classifiers ready.")
+    print("Classifiers ready.")
     # ================= CELL 8 =================
     # ============================================================
     # CELL 8 — LOAD DATASETS + MULTI-CLOUD + LOCATION
@@ -960,7 +960,7 @@ def prepare_pipeline():
     )
 
     print(
-        "\n✅ combined_threats.csv saved."
+        "\ncombined_threats.csv saved."
     )
     # ================= CELL 10 =================
     # ============================================================
@@ -1968,7 +1968,7 @@ def prepare_pipeline():
 
 
     print(
-        "✅ LSTM training finished."
+        "LSTM training finished."
     )
     # ================= CELL 21 =================
     # ============================================================
@@ -2204,7 +2204,7 @@ def prepare_pipeline():
 
 
     print(
-        "✅ K-Means trained."
+        "K-Means trained."
     )
 
 
@@ -2362,7 +2362,7 @@ def prepare_pipeline():
 
 
     print(
-        "✅ AbuseIPDB function ready."
+        "AbuseIPDB function ready."
     )
     # ================= CELL 25 =================
     # ============================================================
@@ -2778,16 +2778,16 @@ def prepare_pipeline():
 
 
     print(
-        "✅ All trained models saved."
+        "All trained models saved."
     )
 
 
-    print("✅ All trained models saved.")
+    print("All trained models saved.")
     PREPARATION_LOG.write_text(
         "Full dataset processing and model training completed successfully.\n",
         encoding="utf-8",
     )
-    print("✅ Full pipeline completed successfully.")
+    print("Full pipeline completed successfully.")
 
 
 # Import Streamlit after the installation check and pipeline definitions.
